@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C0ED7A31FEC3BF800069491 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ED7A21FEC3BF800069491 /* User.swift */; };
+		1C0ED7A51FECBA3C00069491 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ED7A41FECBA3C00069491 /* SignUpViewController.swift */; };
+		1C0ED7A71FED148900069491 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ED7A61FED148900069491 /* MainViewController.swift */; };
 		1C24F2311FEC1F7C0091E848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C24F2301FEC1F7C0091E848 /* AppDelegate.swift */; };
-		1C24F2331FEC1F7C0091E848 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C24F2321FEC1F7C0091E848 /* ViewController.swift */; };
+		1C24F2331FEC1F7C0091E848 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C24F2321FEC1F7C0091E848 /* LoginViewController.swift */; };
 		1C24F2361FEC1F7C0091E848 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C24F2341FEC1F7C0091E848 /* Main.storyboard */; };
 		1C24F2391FEC1F7C0091E848 /* Foodie_Photos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C24F2371FEC1F7C0091E848 /* Foodie_Photos.xcdatamodeld */; };
 		1C24F23B1FEC1F7C0091E848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C24F23A1FEC1F7C0091E848 /* Assets.xcassets */; };
 		1C24F23E1FEC1F7C0091E848 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C24F23C1FEC1F7C0091E848 /* LaunchScreen.storyboard */; };
+		C5DE78FA3A9BD05C24E0D414 /* Pods_Foodie_Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25EC9D70E43708E0E489B07C /* Pods_Foodie_Photos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C0ED7A21FEC3BF800069491 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1C0ED7A41FECBA3C00069491 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		1C0ED7A61FED148900069491 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1C24F22D1FEC1F7C0091E848 /* Foodie Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foodie Photos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C24F2301FEC1F7C0091E848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1C24F2321FEC1F7C0091E848 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1C24F2321FEC1F7C0091E848 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1C24F2351FEC1F7C0091E848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C24F2381FEC1F7C0091E848 /* Foodie_Photos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foodie_Photos.xcdatamodel; sourceTree = "<group>"; };
 		1C24F23A1FEC1F7C0091E848 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C24F23D1FEC1F7C0091E848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C24F23F1FEC1F7C0091E848 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25EC9D70E43708E0E489B07C /* Pods_Foodie_Photos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foodie_Photos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98440CDC3C59C0FAE8358321 /* Pods-Foodie Photos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie Photos.release.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie Photos/Pods-Foodie Photos.release.xcconfig"; sourceTree = "<group>"; };
+		D7FB0A6F6BF054C55FE1B842 /* Pods-Foodie Photos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie Photos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie Photos/Pods-Foodie Photos.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5DE78FA3A9BD05C24E0D414 /* Pods_Foodie_Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +53,8 @@
 			children = (
 				1C24F22F1FEC1F7C0091E848 /* Foodie Photos */,
 				1C24F22E1FEC1F7C0091E848 /* Products */,
+				4805D890336C640D00DDC897 /* Pods */,
+				D060C273D2C7B526611BE159 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,7 +70,10 @@
 			isa = PBXGroup;
 			children = (
 				1C24F2301FEC1F7C0091E848 /* AppDelegate.swift */,
-				1C24F2321FEC1F7C0091E848 /* ViewController.swift */,
+				1C0ED7A21FEC3BF800069491 /* User.swift */,
+				1C24F2321FEC1F7C0091E848 /* LoginViewController.swift */,
+				1C0ED7A41FECBA3C00069491 /* SignUpViewController.swift */,
+				1C0ED7A61FED148900069491 /* MainViewController.swift */,
 				1C24F2341FEC1F7C0091E848 /* Main.storyboard */,
 				1C24F23A1FEC1F7C0091E848 /* Assets.xcassets */,
 				1C24F23C1FEC1F7C0091E848 /* LaunchScreen.storyboard */,
@@ -67,6 +83,23 @@
 			path = "Foodie Photos";
 			sourceTree = "<group>";
 		};
+		4805D890336C640D00DDC897 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7FB0A6F6BF054C55FE1B842 /* Pods-Foodie Photos.debug.xcconfig */,
+				98440CDC3C59C0FAE8358321 /* Pods-Foodie Photos.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D060C273D2C7B526611BE159 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25EC9D70E43708E0E489B07C /* Pods_Foodie_Photos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C24F2421FEC1F7C0091E848 /* Build configuration list for PBXNativeTarget "Foodie Photos" */;
 			buildPhases = (
+				4C2B25521B24EC2C01939242 /* [CP] Check Pods Manifest.lock */,
 				1C24F2291FEC1F7C0091E848 /* Sources */,
 				1C24F22A1FEC1F7C0091E848 /* Frameworks */,
 				1C24F22B1FEC1F7C0091E848 /* Resources */,
+				7B9EC023554273BBA7F10B94 /* [CP] Embed Pods Frameworks */,
+				68FDD855609612C04CDD4DF1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,14 +170,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4C2B25521B24EC2C01939242 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Foodie Photos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68FDD855609612C04CDD4DF1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Foodie Photos/Pods-Foodie Photos-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B9EC023554273BBA7F10B94 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Foodie Photos/Pods-Foodie Photos-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Foodie Photos/Pods-Foodie Photos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1C24F2291FEC1F7C0091E848 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C24F2331FEC1F7C0091E848 /* ViewController.swift in Sources */,
+				1C0ED7A31FEC3BF800069491 /* User.swift in Sources */,
+				1C24F2331FEC1F7C0091E848 /* LoginViewController.swift in Sources */,
 				1C24F2391FEC1F7C0091E848 /* Foodie_Photos.xcdatamodeld in Sources */,
+				1C0ED7A71FED148900069491 /* MainViewController.swift in Sources */,
 				1C24F2311FEC1F7C0091E848 /* AppDelegate.swift in Sources */,
+				1C0ED7A51FECBA3C00069491 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,10 +371,12 @@
 		};
 		1C24F2431FEC1F7C0091E848 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7FB0A6F6BF054C55FE1B842 /* Pods-Foodie Photos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Foodie Photos/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.therohansanaptechstudios.Foodie-Photos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -290,10 +387,12 @@
 		};
 		1C24F2441FEC1F7C0091E848 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98440CDC3C59C0FAE8358321 /* Pods-Foodie Photos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Foodie Photos/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.therohansanaptechstudios.Foodie-Photos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
