@@ -49,6 +49,11 @@ class SignUpViewController: UIViewController {
             return
         }
         
+        guard email.isValidEmailAddress() else {
+            showErrorAlert("Please enter a valid email address")
+            return
+        }
+        
         guard password == retypedPassword else {
             showErrorAlert("Text entered in password filed and password confirmation field do not match")
             return
@@ -83,6 +88,30 @@ class SignUpViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
-    
+}
 
+extension String {
+    
+    func isValidEmailAddress() -> Bool {
+        
+        var returnValue = true
+        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
+        
+        do {
+            let regex = try NSRegularExpression(pattern: emailRegEx)
+            let nsString = self as NSString
+            let results = regex.matches(in: self, range: NSRange(location: 0, length: nsString.length))
+            
+            if results.count == 0
+            {
+                returnValue = false
+            }
+            
+        } catch let error as NSError {
+            print("invalid regex: \(error.localizedDescription)")
+            returnValue = false
+        }
+        
+        return  returnValue
+    }
 }
