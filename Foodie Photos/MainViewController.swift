@@ -14,6 +14,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     var collections = [Collection]()
     var isLoading = false
     var backgroundMessage = ""
+    var refreshControl: UIRefreshControl!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -24,12 +25,19 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         title = "Foodie Photos"
         collectionView.dataSource = self
         collectionView.delegate = self
+        setupRefreshControl()
         getCollections()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(MainViewController.getCollections), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
     }
     
     class func show() {
@@ -43,18 +51,22 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         LoginViewController.show()
     }
     
-    func getCollections() {
+    @objc func getCollections() {
         if !isLoading {
             isLoading = true
             
             APICaller.getCollections(success: { (collections) in
                 self.collections = collections
                 self.isLoading = false
-                self.backgroundMessage = collections.isEmpty ? "No collections to display" : ""
+                self.refreshControl.endRefreshing()
+                self.backgroundMessage = collections.isEmpty ? "No collections to display." : ""
+                self.backgroundMessage = !self.backgroundMessage.isEmpty ? self.backgroundMessage + " Pull to reload" : ""
                 self.collectionView.reloadData()
             }) { (errorMessage) in
                 self.backgroundMessage = errorMessage
+                self.backgroundMessage = !self.backgroundMessage.isEmpty ? self.backgroundMessage + " Pull to reload" : ""
                 self.isLoading = false
+                self.refreshControl.endRefreshing()
                 self.collectionView.reloadData()
             }
         }

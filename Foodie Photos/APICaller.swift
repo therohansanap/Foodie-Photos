@@ -31,10 +31,9 @@ class APICaller {
                         return
                     }
                 }
-                failure("Unexpected response from server")
+                failure("Unexpected response from server.")
                 return
             case .failure(let error):
-                print(error)
                 failure(APICaller.parseErrorAndGiveMessage(givenError: error as NSError))
                 return
             }
