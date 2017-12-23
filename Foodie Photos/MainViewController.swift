@@ -12,7 +12,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBOutlet weak var collectionView: UICollectionView!
     var collections = [Collection]()
-    var isLoading = true
+    var isLoading = false
     var backgroundMessage = ""
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -21,9 +21,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Foodie Photos"
         collectionView.dataSource = self
         collectionView.delegate = self
+        getCollections()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +43,23 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         LoginViewController.show()
     }
     
+    func getCollections() {
+        if !isLoading {
+            isLoading = true
+            
+            APICaller.getCollections(success: { (collections) in
+                self.collections = collections
+                self.isLoading = false
+                self.backgroundMessage = collections.isEmpty ? "No collections to display" : ""
+                self.collectionView.reloadData()
+            }) { (errorMessage) in
+                self.backgroundMessage = errorMessage
+                self.isLoading = false
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
     func setLoadingView(_ collectionView: UICollectionView) {
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         activityIndicator.startAnimating()
@@ -56,6 +74,17 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionView.backgroundView = label
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "details" {
+                if let collection = sender as? Collection {
+                    let detailsVC = segue.destination as! DetailsViewController
+                    detailsVC.collection = collection
+                }
+            }
+        }
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         if collections.isEmpty {
             if isLoading {
@@ -63,12 +92,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             }else {
                 setMessageView(collectionView)
             }
-            
         }else {
             collectionView.backgroundView = nil
         }
         
-        return collections.count
+        return collections.isEmpty ? 0 : 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -77,8 +105,15 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PhotoCollectionViewCell
+        cell.setDefault()
+        cell.setFor(collections[indexPath.item])
         cell.backgroundColor = UIColor.black
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let collection = collections[indexPath.item]
+        performSegue(withIdentifier: "details", sender: collection)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

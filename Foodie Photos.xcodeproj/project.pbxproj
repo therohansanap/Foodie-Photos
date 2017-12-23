@@ -10,8 +10,10 @@
 		1C0ED7A31FEC3BF800069491 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ED7A21FEC3BF800069491 /* User.swift */; };
 		1C0ED7A51FECBA3C00069491 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ED7A41FECBA3C00069491 /* SignUpViewController.swift */; };
 		1C0ED7A71FED148900069491 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ED7A61FED148900069491 /* MainViewController.swift */; };
+		1C1CBCD61FEE2A16004E14F6 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1CBCD51FEE2A16004E14F6 /* DetailsViewController.swift */; };
 		1C1D03A11FED5B2A0095DB45 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D03A01FED5B2A0095DB45 /* PhotoCollectionViewCell.swift */; };
 		1C1D03A31FED5D820095DB45 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D03A21FED5D820095DB45 /* Collection.swift */; };
+		1C1D03A51FED7F360095DB45 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D03A41FED7F360095DB45 /* APICaller.swift */; };
 		1C24F2311FEC1F7C0091E848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C24F2301FEC1F7C0091E848 /* AppDelegate.swift */; };
 		1C24F2331FEC1F7C0091E848 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C24F2321FEC1F7C0091E848 /* LoginViewController.swift */; };
 		1C24F2361FEC1F7C0091E848 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C24F2341FEC1F7C0091E848 /* Main.storyboard */; };
@@ -25,8 +27,10 @@
 		1C0ED7A21FEC3BF800069491 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1C0ED7A41FECBA3C00069491 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1C0ED7A61FED148900069491 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1C1CBCD51FEE2A16004E14F6 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		1C1D03A01FED5B2A0095DB45 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		1C1D03A21FED5D820095DB45 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		1C1D03A41FED7F360095DB45 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		1C24F22D1FEC1F7C0091E848 /* Foodie Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foodie Photos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C24F2301FEC1F7C0091E848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C24F2321FEC1F7C0091E848 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -78,8 +82,10 @@
 				1C24F2321FEC1F7C0091E848 /* LoginViewController.swift */,
 				1C0ED7A41FECBA3C00069491 /* SignUpViewController.swift */,
 				1C0ED7A61FED148900069491 /* MainViewController.swift */,
+				1C1CBCD51FEE2A16004E14F6 /* DetailsViewController.swift */,
 				1C1D03A21FED5D820095DB45 /* Collection.swift */,
 				1C1D03A01FED5B2A0095DB45 /* PhotoCollectionViewCell.swift */,
+				1C1D03A41FED7F360095DB45 /* APICaller.swift */,
 				1C24F2341FEC1F7C0091E848 /* Main.storyboard */,
 				1C24F23A1FEC1F7C0091E848 /* Assets.xcassets */,
 				1C24F23C1FEC1F7C0091E848 /* LaunchScreen.storyboard */,
@@ -217,11 +223,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Foodie Photos/Pods-Foodie Photos-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -241,10 +251,12 @@
 				1C24F2331FEC1F7C0091E848 /* LoginViewController.swift in Sources */,
 				1C24F2391FEC1F7C0091E848 /* Foodie_Photos.xcdatamodeld in Sources */,
 				1C0ED7A71FED148900069491 /* MainViewController.swift in Sources */,
+				1C1D03A51FED7F360095DB45 /* APICaller.swift in Sources */,
 				1C1D03A11FED5B2A0095DB45 /* PhotoCollectionViewCell.swift in Sources */,
 				1C24F2311FEC1F7C0091E848 /* AppDelegate.swift in Sources */,
 				1C0ED7A51FECBA3C00069491 /* SignUpViewController.swift in Sources */,
 				1C1D03A31FED5D820095DB45 /* Collection.swift in Sources */,
+				1C1CBCD61FEE2A16004E14F6 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
